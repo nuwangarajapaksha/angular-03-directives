@@ -1,0 +1,98 @@
+<!-- 01 ngIf-->
+<!-- <div *ngIf="courses.length > 0">List of courses</div>
+<div *ngIf="courses.length == 0">No courses yet</div> -->
+
+<!-- 02 ngIf-->
+<!-- <div *ngIf="courses.length > 0; else noCourses">List of courses</div>
+<ng-template #noCourses> No courses yet </ng-template> -->
+
+<!-- 03 ngIf-->
+<!-- <div *ngIf="courses.length > 0; then coursesList; else noCourses"></div>
+<ng-template #coursesList> List of courses </ng-template>
+<ng-template #noCourses> No courses yet </ng-template> -->
+
+<!-- 04 hidden-->
+<!-- <div [hidden]="courses.length == 0">List of courses</div>
+<div [hidden]="courses.length > 0">No courses yet</div> -->
+
+<!-- 05 ngSwitchCase-->
+<!-- <ul class="nav nav-pills">
+  <li [class.active]="viewMode == 'map'">
+    <a (click)="viewMode = 'map'">Map View</a>
+  </li>
+  <li [class.active]="viewMode == 'list'">
+    <a (click)="viewMode = 'list'">List View</a>
+  </li>
+</ul>
+<div [ngSwitch]="viewMode">
+  <div *ngSwitchCase="'map'">Map View Content</div>
+  <div *ngSwitchCase="'list'">List View Content</div>
+  <div *ngSwitchDefault>Otherwise</div>
+</div> -->
+
+<!-- 06 ngFor-->
+<!-- <ul>
+  <li *ngFor="let course of courses">
+    {{ course.name }}
+  </li>
+</ul> -->
+
+<!-- 07 ngFor-->
+<!-- <ul>
+  <li *ngFor="let course of courses; index as i">
+    {{ i }}-{{ course.name }}
+  </li>
+</ul> -->
+
+<!-- 08 ngFor-->
+<!-- <ul>
+  <li *ngFor="let course of courses; even as isEven">
+    {{ course.name }}
+    <span *ngIf="isEven">(Even)</span>
+  </li>
+</ul> -->
+
+<!-- 09 ngFor and Change Detection-->
+<!-- <button (click)="onAdd()">Add</button>
+<ul>
+  <li *ngFor="let course of courses">
+    {{ course.name }}
+    <button (click)="onRemove(course)">Remove</button>
+    <button (click)="onChange(course)">Change</button>
+  </li>
+</ul> -->
+
+<!-- 10 ngFor and TrackBy-->
+<!-- <button (click)="loadCourses()">Load Courses</button>
+<ul>
+  <li *ngFor="let course of courses; trackBy: trackCourse">
+    {{ course.name }}
+  </li>
+</ul> -->
+
+<!-- 11 The Leading Asterisk-->
+<!-- <div *ngIf="courses.length > 0">List of courses</div>
+<ng-template [ngIf]="courses.length > 0">
+  <div>List of Courses</div>
+</ng-template>
+<ng-template [ngIf]="!(courses.length > 0)"> No courses </ng-template> -->
+
+<!-- 12 ngClass -->
+<!-- <favorite></favorite> -->
+
+<!-- 13 ngStyle -->
+<!-- <button
+  [ngStyle]="{
+    backgroundColor: canSave ? 'blue' : 'gray',
+    color: canSave ? 'white' : 'black'
+  }"
+>
+  Save
+</button> -->
+
+<!-- 14 Safe Traversal Operator  Deprecated-->
+<!-- <span *ngIf="task.assingnee">{{ task.assingnee.name }}</span>
+<span>{{ task.assingnee?.name }}</span> -->
+
+<!-- 15 Creating Custom Directives -->
+<input type="text" [appInputFormat]="'uppercase'" />
